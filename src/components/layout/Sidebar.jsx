@@ -22,8 +22,8 @@ const Sidebar = ({ onOpenModal }) => {
     { name: 'Tableau de bord', icon: LayoutDashboard, path: '/' },
     { name: 'Projets', icon: Briefcase, path: '/projects' },
     { name: 'Calendrier', icon: Calendar, path: '/calendar' },
-    { name: 'Équipe', icon: Users, path: '/team' },
-    { name: 'Paramètres', icon: Settings, path: '/settings' },
+    // { name: 'Équipe', icon: Users, path: '/team' },
+    // { name: 'Paramètres', icon: Settings, path: '/settings' },
   ];
 
   return (
