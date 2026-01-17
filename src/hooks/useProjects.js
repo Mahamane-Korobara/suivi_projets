@@ -1,4 +1,6 @@
 // hooks/useProjects.js
+"use client";
+
 import { useCallback, useMemo } from 'react';
 import { useLocalStorageArray } from './useLocalStorage';
 import { v4 as uuidv4 } from 'uuid';

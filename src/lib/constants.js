@@ -135,13 +135,6 @@ export const PROJECT_STATUS = {
         color: 'text-gray-400',
         bg: 'bg-gray-500/20',
         badge: 'bg-gray-500/10 text-gray-400'
-    },
-    URGENT: {
-        name: 'Urgent',
-        value: 'URGENT',
-        color: 'text-red-400',
-        bg: 'bg-red-500/20',
-        badge: 'bg-red-500/10 text-red-400'
     }
 };
 

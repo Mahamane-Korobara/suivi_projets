@@ -1,5 +1,5 @@
 // lib/dateUtils.js
-import { format, parseISO, isToday, isTomorrow, isYesterday, differenceInDays, addDays, startOfWeek, endOfWeek, eachDayOfInterval } from 'date-fns';
+import { format, parseISO, isToday, isTomorrow, isYesterday, differenceInDays, addDays, startOfWeek, endOfWeek, eachDayOfInterval, formatDistanceToNow } from 'date-fns';
 import { fr } from 'date-fns/locale';
 
 // Formater une date au format lisible
@@ -10,6 +10,17 @@ export const formatDate = (date, formatString = 'dd MMM yyyy') => {
     } catch (error) {
         console.error('Erreur de formatage de date:', error);
         return '';
+    }
+};
+
+// Formater la distance temporelle (ex: "il y a 2 heures")
+export const formatLastModified = (timestamp) => {
+    if (!timestamp) return 'Jamais modifié';
+    try {
+        const date = new Date(timestamp);
+        return `Modifié ${formatDistanceToNow(date, { addSuffix: true, locale: fr })}`;
+    } catch (error) {
+        return 'Date invalide';
     }
 };
 
