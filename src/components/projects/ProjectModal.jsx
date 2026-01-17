@@ -41,7 +41,7 @@ const ProjectModal = ({ isOpen, onClose, title, subtitle, children, footer }) =>
         </div>
 
         {/* Corps (Scrollable si le contenu est long) */}
-        <div className="p-8 pt-2 overflow-y-auto custom-scrollbar">
+        <div className="p-8 pt-2 overflow-y-auto no-scrollbar">
           {children}
         </div>
 
