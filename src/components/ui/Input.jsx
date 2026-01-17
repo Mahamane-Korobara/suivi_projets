@@ -40,7 +40,7 @@ const Input = ({
         {/* Rendu conditionnel : Textarea ou Input */}
         {isTextArea ? (
           <textarea
-            className={`${inputBaseStyles} min-h-[100px] resize-none`}
+            className={`${inputBaseStyles} min-h-25 resize-none`}
             {...props}
           />
         ) : (

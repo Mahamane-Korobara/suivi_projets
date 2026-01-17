@@ -1,9 +1,9 @@
 "use client";
 import React, { useMemo, useState, useEffect } from 'react';
 import Header from '@/components/layout/Header';
-import CircularProgress from '@/components/ui/CircularProgress';
+import CircularProgress from '@/components/dashboard/CircularProgress';
 import ProductivityChart from '@/components/dashboard/ProductivityChart';
-import FocusCard from '@/components/ui/FocusCard';
+import FocusCard from '@/components/dashboard/FocusCard';
 import { useProjects } from '@/hooks/useProjects';
 
 export default function DashboardPage() {
@@ -15,7 +15,7 @@ export default function DashboardPage() {
     setMounted(true);
   }, []);
 
-  // 1. Calcul des statistiques globales pour les cercles de progression
+  // Calcul des statistiques globales pour les cercles de progression
   const stats = useMemo(() => {
     const allTasks = projects.flatMap(p => p.tasks || []);
     const totalTasks = allTasks.length;
@@ -39,7 +39,7 @@ export default function DashboardPage() {
     };
   }, [projects]);
 
-  // 2. Calcul de la tâche prioritaire pour la FocusCard
+  // sCalcul de la tâche prioritaire pour la FocusCard
   const nextTaskFocus = useMemo(() => {
     // On cherche le premier projet qui n'est pas terminé et qui a des tâches restantes
     const focusProject = projects.find(p =>
@@ -74,11 +74,10 @@ export default function DashboardPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
 
-        {/* Colonne de gauche (Stats + Graphique) : occupe 3/4 de l'écran sur desktop */}
         <div className="lg:col-span-3 space-y-6">
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* 1. Objectifs basés sur les tâches terminées */}
+            {/* Objectifs basés sur les tâches terminées */}
             <CircularProgress
               value={stats.completionRate}
               label="Objectifs du jour"
@@ -86,7 +85,7 @@ export default function DashboardPage() {
               color="#2563eb"
             />
 
-            {/* 2. Focus hebdomadaire (Progression globale) */}
+            {/* Focus hebdomadaire (Progression globale) */}
             <CircularProgress
               value={stats.completionRate}
               label="Focus hebdomadaire"
@@ -94,7 +93,7 @@ export default function DashboardPage() {
               color="#10b981"
             />
 
-            {/* 3. Santé des projets (Projets actifs) */}
+            {/* Santé des projets (Projets actifs) */}
             <CircularProgress
               value={stats.projectHealth}
               label="Santé des projets"
@@ -106,7 +105,6 @@ export default function DashboardPage() {
 
         </div>
 
-        {/* Colonne de droite (FocusCard) : occupe 1/4 de l'écran */}
         <div className="lg:col-span-1 space-y-6">
           <h3 className="text-white font-medium text-sm uppercase tracking-wider opacity-50">
             En cours
@@ -120,7 +118,7 @@ export default function DashboardPage() {
               onStart={() => alert(`Démarrage du chrono pour : ${nextTaskFocus.title}`)}
             />
           ) : (
-            <div className="bg-[#121418] border border-gray-800 rounded-xl p-8 text-center flex flex-col items-center justify-center min-h-[200px]">
+            <div className="bg-[#121418] border border-gray-800 rounded-xl p-8 text-center flex flex-col items-center justify-center">
               <div className="text-3xl mb-4">☕</div>
               <p className="text-gray-400 text-sm">Bravo ! Toutes vos tâches sont terminées pour le moment.</p>
             </div>

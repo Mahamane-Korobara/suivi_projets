@@ -12,7 +12,6 @@ import {
   Plus
 } from 'lucide-react';
 import Button from '@/components/ui/Button';
-import ProgressBar from '@/components/ui/ProgressBar';
 
 // Ajout de la prop onOpenModal
 const Sidebar = ({ onOpenModal }) => {

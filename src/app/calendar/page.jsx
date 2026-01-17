@@ -10,7 +10,7 @@ export default function CalendarPage() {
         subtitle="Visualisez la chronologie de vos projets et échéances."
       />
       
-      <div className="flex-1 min-h-[600px]">
+      <div className="flex-1">
         <CalendarView />
       </div>
     </div>

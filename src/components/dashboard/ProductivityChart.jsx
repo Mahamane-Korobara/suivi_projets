@@ -11,10 +11,10 @@ const ProductivityChart = () => {
   const { projects } = useProjects();
 
   const chartData = useMemo(() => {
-    // 1. Récupérer les jours de la semaine (Lundi à Dimanche)
+    // Récupérer les jours de la semaine (Lundi à Dimanche)
     const weekDays = getCurrentWeekDates();
     
-    // 2. Extraire toutes les tâches de tous les projets
+    // Extraire toutes les tâches de tous les projets
     const allTasks = projects.flatMap(p => p.tasks || []);
 
     return weekDays.map(day => {
@@ -23,12 +23,12 @@ const ProductivityChart = () => {
       const dayEnd = new Date(day).setHours(23, 59, 59, 999);
       const dayName = getShortDayName(day).replace('.', '');
 
-      // 3. Compter les tâches complétées ce jour-là
+      // Compter les tâches complétées ce jour-là
       const completedThisDay = allTasks.filter(task => {
         if (!task.completed) return false;
 
         // LOGIQUE DE REPLI : 
-        // On utilise completedAt si présent, sinon l'id (car c'est un timestamp dans ton JSON)
+        // On utilise completedAt si présent, sinon l'id (car c'est un timestamp dans le JSON)
         const taskTimestamp = task.completedAt || task.id;
         
         return taskTimestamp >= dayStart && taskTimestamp <= dayEnd;
@@ -45,7 +45,7 @@ const ProductivityChart = () => {
   const totalThisWeek = chartData.reduce((acc, curr) => acc + curr.value, 0);
 
   return (
-    <div className="bg-[#121418] border border-gray-800 rounded-2xl p-6 w-full h-[350px] flex flex-col">
+    <div className="bg-[#121418] border border-gray-800 rounded-2xl p-6 w-full h-80 flex flex-col">
       <div className="flex justify-between items-start mb-6">
         <div>
           <h3 className="text-lg font-bold text-white">Tendance de productivité</h3>

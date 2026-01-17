@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { Plus, Trash2 } from 'lucide-react';
+import { Plus, Trash2, Clock } from 'lucide-react';
 import ProjectModal from '@/components/projects/ProjectModal';
 import Input from '@/components/ui/Input';
 import Dropdown from '@/components/ui/Dropdown';
@@ -85,7 +85,15 @@ const CreateProjectModal = ({ isOpen, onClose, projectToEdit = null }) => {
   };
 
   const handleSubmit = () => {
-    if (!formData.name.trim()) return alert("Le nom est requis");
+    // Vérification du nom
+    if (!formData.name.trim()) {
+      return alert("Le nom du projet est requis");
+    }
+
+    // Vérification de la présence de tâches (Nouveau)
+    if (tasks.length === 0) {
+      return alert("Vous devez ajouter au moins une tâche pour créer ce projet.");
+    }
 
     const projectData = {
       ...formData,
@@ -106,7 +114,6 @@ const CreateProjectModal = ({ isOpen, onClose, projectToEdit = null }) => {
     handleClose();
     window.location.reload();
   };
-
   return (
     <ProjectModal 
       isOpen={isOpen} 
@@ -222,7 +229,7 @@ const CreateProjectModal = ({ isOpen, onClose, projectToEdit = null }) => {
                     <p className={`text-sm ${task.completed ? 'line-through text-gray-500' : 'text-gray-200'}`}>
                       {task.text}
                     </p>
-                    <span className="text-[10px] text-gray-500 font-mono italic">⏱️ {task.estimatedTime}</span>
+                    <div className="text-[10px] text-gray-500 font-mono italic"><Clock size={16} /> {task.estimatedTime}</div>
                   </div>
                 </div>
                 <button onClick={() => removeTask(task.id)} className="text-gray-600 hover:text-red-500 opacity-0 group-hover:opacity-100 transition-opacity">

@@ -8,7 +8,7 @@ import { PROJECT_COLORS } from '@/lib/constants';
 const CalendarView = () => {
   const { projects } = useProjects();
 
-  // 1. Transformation des données JSON en événements FullCalendar
+  // Transformation des données JSON en événements FullCalendar
   const events = projects.map(project => {
     // FullCalendar exclut le jour de fin (exclusive), donc pour un projet
     // finissant le 17, il faut dire au calendrier de s'arrêter le 18 
@@ -123,7 +123,7 @@ const CalendarView = () => {
         firstDay={0} // Dimanche comme premier jour
         eventClick={(info) => {
           console.log("ID du projet cliqué :", info.event.id);
-          // Ici tu pourras ouvrir ta modal d'édition
+          // Ici on pourras ouvrir ta modal d'édition
         }}
       />
     </div>

@@ -138,108 +138,73 @@ export const PROJECT_STATUS = {
     }
 };
 
-// Navigation de la sidebar
-export const SIDEBAR_NAVIGATION = [
-    {
-        name: 'Tableau de bord',
-        href: '/',
-        icon: LayoutDashboard,
-        active: true
-    },
-    {
-        name: 'Projets',
-        href: '/projects',
-        icon: FolderKanban,
-        active: false
-    },
-    {
-        name: 'Calendrier',
-        href: '/calendar',
-        icon: Calendar,
-        active: false
-    },
-    {
-        name: 'Équipe',
-        href: '/team',
-        icon: Users,
-        active: false
-    },
-    {
-        name: 'Paramètres',
-        href: '/settings',
-        icon: Settings,
-        active: false
-    }
-];
-
-// Options pour le dropdown de priorité
-export const PRIORITY_OPTIONS = [
-    { label: 'Basse', value: 'basse' },
-    { label: 'Moyenne', value: 'moyenne' },
-    { label: 'Haute', value: 'haute' },
-    { label: 'Urgente', value: 'urgente' }
-];
+// export const PRIORITY_OPTIONS = [
+//     { label: 'Basse', value: 'basse' },
+//     { label: 'Moyenne', value: 'moyenne' },
+//     { label: 'Haute', value: 'haute' },
+//     { label: 'Urgente', value: 'urgente' }
+// ];
 
 // Options pour le dropdown de statut
-export const STATUS_OPTIONS = [
-    { label: 'Actif', value: 'ACTIF' },
-    { label: 'Planification', value: 'PLANIFICATION' },
-    { label: 'Terminé', value: 'TERMINÉ' },
-    { label: 'Urgent', value: 'URGENT' }
-];
+// export const STATUS_OPTIONS = [
+//     { label: 'Actif', value: 'ACTIF' },
+//     { label: 'Planification', value: 'PLANIFICATION' },
+//     { label: 'Terminé', value: 'TERMINÉ' },
+//     { label: 'Urgent', value: 'URGENT' }
+// ];
 
 // Durées de focus par défaut (en minutes)
-export const FOCUS_DURATIONS = {
-    short: { label: '25 min', value: 25 },
-    medium: { label: '45 min', value: 45 },
-    long: { label: '1h 30', value: 90 },
-    veryLong: { label: '2h 30', value: 150 }
-};
+// export const FOCUS_DURATIONS = {
+//     short: { label: '25 min', value: 25 },
+//     medium: { label: '45 min', value: 45 },
+//     long: { label: '1h 30', value: 90 },
+//     veryLong: { label: '2h 30', value: 150 }
+// };
 
-// Messages de motivation
-export const MOTIVATION_MESSAGES = [
-    "Excellent travail ! 🎉",
-    "Continue comme ça ! 💪",
-    "Tu es sur la bonne voie ! 🚀",
-    "Impressionnant ! ⭐",
-    "Bravo pour ta productivité ! 🏆"
-];
+// // Messages de motivation
+// export const MOTIVATION_MESSAGES = [
+//     "Excellent travail ! 🎉",
+//     "Continue comme ça ! 💪",
+//     "Tu es sur la bonne voie ! 🚀",
+//     "Impressionnant ! ⭐",
+//     "Bravo pour ta productivité ! 🏆"
+// ];
 
-// Couleurs pour le graphique de productivité
-export const CHART_COLORS = {
-    primary: '#3b82f6',
-    secondary: '#8b5cf6',
-    success: '#10b981',
-    warning: '#f59e0b',
-    danger: '#ef4444',
-    grid: '#1e293b'
-};
+// // Couleurs pour le graphique de productivité
+// export const CHART_COLORS = {
+//     primary: '#3b82f6',
+//     secondary: '#8b5cf6',
+//     success: '#10b981',
+//     warning: '#f59e0b',
+//     danger: '#ef4444',
+//     grid: '#1e293b'
+// };
 
-// Limites et valeurs par défaut
-export const DEFAULTS = {
-    tasksPerPage: 20,
-    projectsPerPage: 12,
-    maxTaskNameLength: 100,
-    maxProjectNameLength: 50,
-    maxDescriptionLength: 500,
-    focusTimeDefault: 25, // minutes
-    productivityThreshold: 70, // pourcentage
-    weeklyGoal: 40 // tâches par semaine
-};
+// // Limites et valeurs par défaut
+// export const DEFAULTS = {
+//     tasksPerPage: 20,
+//     projectsPerPage: 12,
+//     maxTaskNameLength: 100,
+//     maxProjectNameLength: 50,
+//     maxDescriptionLength: 500,
+//     focusTimeDefault: 25, // minutes
+//     productivityThreshold: 70, // pourcentage
+//     weeklyGoal: 40 // tâches par semaine
+// };
 
-// Filtres de projets
-export const PROJECT_FILTERS = {
-    all: { label: 'Tous', value: 'all' },
-    active: { label: 'Actifs', value: 'ACTIF' },
-    planning: { label: 'Planification', value: 'PLANIFICATION' },
-    completed: { label: 'Terminés', value: 'TERMINÉ' },
-    urgent: { label: 'Urgents', value: 'URGENT' }
-};
+// // Filtres de projets
+// export const PROJECT_FILTERS = {
+//     all: { label: 'Tous', value: 'all' },
+//     active: { label: 'Actifs', value: 'ACTIF' },
+//     planning: { label: 'Planification', value: 'PLANIFICATION' },
+//     completed: { label: 'Terminés', value: 'TERMINÉ' },
+//     urgent: { label: 'Urgents', value: 'URGENT' }
+// };
 
-// Tris disponibles
-export const SORT_OPTIONS = {
-    date: { label: 'Date de modification', value: 'lastModified' },
-    name: { label: 'Nom', value: 'name' },
-    progress: { label: 'Progression', value: 'progress' },
-    priority: { label: 'Priorité', value: 'priority' }
-};
+// // Tris disponibles
+// export const SORT_OPTIONS = {
+//     date: { label: 'Date de modification', value: 'lastModified' },
+//     name: { label: 'Nom', value: 'name' },
+//     progress: { label: 'Progression', value: 'progress' },
+//     priority: { label: 'Priorité', value: 'priority' }
+// };

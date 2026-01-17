@@ -14,7 +14,7 @@ const CircularProgress = ({
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 bg-[#121418] border border-gray-800 rounded-2xl w-full h-full min-h-[220px]">
+    <div className="flex flex-col items-center justify-center p-6 bg-[#121418] border border-gray-800 rounded-2xl w-full h-full min-h-55">
       <div className="relative w-full h-32">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>

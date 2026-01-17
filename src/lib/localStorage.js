@@ -137,60 +137,60 @@ export const toggleTaskCompletion = (taskId) => {
 };
 
 // === STATISTIQUES ===
-export const saveStats = (stats) => {
-    return saveToStorage(STORAGE_KEYS.STATS, stats);
-};
+// export const saveStats = (stats) => {
+//     return saveToStorage(STORAGE_KEYS.STATS, stats);
+// };
 
-export const getStats = () => {
-    return getFromStorage(STORAGE_KEYS.STATS, []);
-};
+// export const getStats = () => {
+//     return getFromStorage(STORAGE_KEYS.STATS, []);
+// };
 
-export const getStatsByDate = (date) => {
-    const stats = getStats();
-    return stats.find(s => s.date === date) || null;
-};
+// export const getStatsByDate = (date) => {
+//     const stats = getStats();
+//     return stats.find(s => s.date === date) || null;
+// };
 
-export const saveDailyStat = (stat) => {
-    const stats = getStats();
-    const existingIndex = stats.findIndex(s => s.date === stat.date);
+// export const saveDailyStat = (stat) => {
+//     const stats = getStats();
+//     const existingIndex = stats.findIndex(s => s.date === stat.date);
 
-    if (existingIndex >= 0) {
-        stats[existingIndex] = stat;
-    } else {
-        stats.push(stat);
-    }
+//     if (existingIndex >= 0) {
+//         stats[existingIndex] = stat;
+//     } else {
+//         stats.push(stat);
+//     }
 
-    // Garder seulement les 30 derniers jours
-    const sorted = stats.sort((a, b) => new Date(b.date) - new Date(a.date));
-    const limited = sorted.slice(0, 30);
+//     // Garder seulement les 30 derniers jours
+//     const sorted = stats.sort((a, b) => new Date(b.date) - new Date(a.date));
+//     const limited = sorted.slice(0, 30);
 
-    return saveStats(limited);
-};
+//     return saveStats(limited);
+// };
 
-// === TÂCHE EN COURS ===
-export const saveCurrentTask = (task) => {
-    return saveToStorage(STORAGE_KEYS.CURRENT_TASK, task);
-};
+// // === TÂCHE EN COURS ===
+// export const saveCurrentTask = (task) => {
+//     return saveToStorage(STORAGE_KEYS.CURRENT_TASK, task);
+// };
 
-export const getCurrentTask = () => {
-    return getFromStorage(STORAGE_KEYS.CURRENT_TASK, null);
-};
+// export const getCurrentTask = () => {
+//     return getFromStorage(STORAGE_KEYS.CURRENT_TASK, null);
+// };
 
-export const clearCurrentTask = () => {
-    return removeFromStorage(STORAGE_KEYS.CURRENT_TASK);
-};
+// export const clearCurrentTask = () => {
+//     return removeFromStorage(STORAGE_KEYS.CURRENT_TASK);
+// };
 
-// === PARAMÈTRES ===
-export const saveSettings = (settings) => {
-    return saveToStorage(STORAGE_KEYS.SETTINGS, settings);
-};
+// // === PARAMÈTRES ===
+// export const saveSettings = (settings) => {
+//     return saveToStorage(STORAGE_KEYS.SETTINGS, settings);
+// };
 
-export const getSettings = () => {
-    return getFromStorage(STORAGE_KEYS.SETTINGS, {
-        theme: 'dark',
-        notifications: true,
-        language: 'fr'
-    });
-};
+// export const getSettings = () => {
+//     return getFromStorage(STORAGE_KEYS.SETTINGS, {
+//         theme: 'dark',
+//         notifications: true,
+//         language: 'fr'
+//     });
+// };
 
 export { STORAGE_KEYS };

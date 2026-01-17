@@ -5,7 +5,6 @@ import ProgressBar from '@/components/ui/ProgressBar';
 import { PROJECT_COLORS, PROJECT_ICONS, PROJECT_STATUS } from '@/lib/constants';
 import { formatLastModified } from '@/lib/dateUtils';
 import { useProjects } from '@/hooks/useProjects';
-// Import important pour la modification
 import CreateProjectModal from '@/components/layout/CreateProjectModal'; 
 
 const ProjectCard = ({ project }) => {
@@ -39,7 +38,6 @@ const ProjectCard = ({ project }) => {
   const handleChangeStatus = (newStatus) => {
     updateProjectData(project.id, { status: newStatus });
     setShowMenu(false);
-    // Optionnel : reload ici aussi si tu veux rafraîchir les stats
     window.location.reload(); 
   };
 
