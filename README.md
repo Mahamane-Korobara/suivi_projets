@@ -306,3 +306,12 @@ Les contributions sont bienvenues ! Pour contribuer :
 ---
 
 **Version** : 0.1.0 | **Dernière mise à jour** : Mars 2026
+
+---
+
+## 👤 Auteur
+
+Développé par **Mahamane Korobara**, développeur full-stack.
+
+- 🌐 Portfolio & blog technique : **[sahelstack.tech](https://www.sahelstack.tech)**
+- 💼 GitHub : [@Mahamane-Korobara](https://github.com/Mahamane-Korobara)
